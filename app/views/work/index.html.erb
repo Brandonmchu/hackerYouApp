@@ -1,0 +1,25 @@
+<h1>My Portfolio</h1>
+<%= link_to "Add new work", new_work_path %>
+<table>
+
+	<tr>
+		<th>Title</th>
+		<th>Description</th>
+		<th>Screenshot</th>
+		<th>Demo</th>
+		<th>Technology Used</th>
+	</tr>
+
+	<% @works.each do |work| %>
+		<tr>
+			<td><%= work.title %></td>
+			<td><%= work.description %></td>
+			<td><%= work.screenshot_url %></td>
+			<td><%= work.demo_url %></td>
+			<td><%= work.technology_used %></td>
+			<td><%= link_to 'edit', edit_work_path(work.id) %></td>
+			<td><%= link_to 'delete', work, action: 'destroy', method: 'delete' %></td>
+		</tr>
+	<% end %>
+
+</table>

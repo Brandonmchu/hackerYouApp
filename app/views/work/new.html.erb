@@ -1,0 +1,9 @@
+<h1>Create a new Work in your Portfolio</h1>
+<%= form_for @work, url: {action: 'create'} do |f| %>
+	<h3>Title</h3><%= f.text_field :title %>
+	<h3>Description</h3><%= f.text_field :description %>
+	<h3>Screenshot (url)</h3><%= f.text_field :screenshot_url %>
+	<h3>Demo (url)</h3><%= f.text_field :demo_url %>
+	<h3>Technology Used?</h3><%= f.text_field :technology_used %>
+	<br /><%= f.submit "Save New Work" %>
+<% end %>
