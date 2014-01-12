@@ -1,9 +1,9 @@
-<h1>Create a new Work in your Portfolio</h1>
-<%= form_for @work, url: {action: 'create'} do |f| %>
-	<h3>Title</h3><%= f.text_field :title %>
-	<h3>Description</h3><%= f.text_field :description %>
-	<h3>Screenshot (url)</h3><%= f.text_field :screenshot_url %>
-	<h3>Demo (url)</h3><%= f.text_field :demo_url %>
-	<h3>Technology Used?</h3><%= f.text_field :technology_used %>
-	<br /><%= f.submit "Save New Work" %>
+<h1>Add a new work to your Portfolio</h1>
+<%= form_for @work, url: {action: 'create'}, :html => {class: "form-group"} do |f| %>
+	<h4>Title</h4><%= f.text_field :title, class: "form-control" %>
+	<h4>Description</h4><%= f.text_field :description, class: "form-control" %>
+	<h4>Screenshot URL</h4><%= f.text_field :screenshot_url, class: "form-control", value: "http://..." %>
+	<h4>Demo</h4><%= f.text_field :demo_url, class: "form-control", value: "http://..." %>
+	<h4>Technology Used?</h4><%= f.text_field :technology_used, class: "form-control" %>
+	<br /><%= f.submit "Save New Work", class: "btn btn-default" %>
 <% end %>

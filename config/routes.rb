@@ -1,5 +1,6 @@
 HackerYouApp::Application.routes.draw do
 
+  root to: "work#index"
   resources :work
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -21,7 +22,7 @@ HackerYouApp::Application.routes.draw do
   #     member do
   #       get 'short'
   #       post 'toggle'
-  #     end
+  #     end 
   #
   #     collection do
   #       get 'sold'

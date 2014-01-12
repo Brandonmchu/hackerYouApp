@@ -1,9 +1,9 @@
 <h1><%= @work.title %></h1>
-<h3><%= @work.description %></h3>
-<ul>
-			<li><%= @work.screenshot_url %></li>
-			<li><%= @work.demo_url %></li>
-			<li><%= @work.technology_used %></li>
+<h4><%= @work.description %></h4>
+<ul class="list-group">
+			<li class="list-group-item"><b>Screenshot: </b><%= image_tag "#{@work.screenshot_url}" %></li>
+			<li class="list-group-item"><b>Demo Website: </b><%= link_to @work.demo_url, "http://#{@work.demo_url}" %></li>
+			<li class="list-group-item"><b>The Technology I used: </b><%= @work.technology_used %></li>
 
 </ul>
 

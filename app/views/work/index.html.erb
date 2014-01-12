@@ -1,6 +1,11 @@
-<h1>My Portfolio</h1>
-<%= link_to "Add new work", new_work_path %>
-<table>
+<div class="row">
+	<div class="sectionheader">
+	<h1>My Portfolio</h1>
+	
+	</div>
+</div>
+
+<table class="table">
 
 	<tr>
 		<th>Title</th>
@@ -12,14 +17,16 @@
 
 	<% @works.each do |work| %>
 		<tr>
-			<td><%= work.title %></td>
+			<td><%= link_to work.title, work_path(work.id) %></td>
 			<td><%= work.description %></td>
-			<td><%= work.screenshot_url %></td>
+			<td><%= image_tag "#{work.screenshot_url}" %></td>
 			<td><%= work.demo_url %></td>
 			<td><%= work.technology_used %></td>
 			<td><%= link_to 'edit', edit_work_path(work.id) %></td>
-			<td><%= link_to 'delete', work, action: 'destroy', method: 'delete' %></td>
+			<td><%= link_to 'delete', work, action: 'destroy', method: 'delete', confirm: "This will permanently delete this work, are u sure?" %></td>
 		</tr>
 	<% end %>
 
 </table>
+
+<%= button_to "Add new work", new_work_path, method: "get", class: "btn btn-default"  %>
